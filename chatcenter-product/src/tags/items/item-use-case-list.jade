@@ -1,0 +1,32 @@
+item-use-case-list
+  div.wrap-item.px8.py12
+    div.wrap-img.pr12
+      img(src='./img/icon/check.svg')
+    div.wrap-text
+      p.title.mb4 {opts.content.title}
+      p.text {opts.content.text}
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: inline-block;
+      .wrap-item {
+        display: inline-flex;
+        .wrap-img {
+          img {
+            width: 24px;
+          }
+        }
+        .wrap-text {
+          width: 100%;
+          .title {
+            font-weight: bold;
+          }
+          .text {
+            font-weight: lighter;
+          }
+        }
+      }
+    }
+

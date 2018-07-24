@@ -1,9 +1,10 @@
-module-why-points.py40
+module-use-case.py40
   div.wrap-module
-    p.lead.mb24 {content.lead_text}
-    item-why-points-point(each='{item in content.contents}' content='{item}')
-    div.wrap-button.f.fc
-      item-button-cta(content='{content.cta}')
+    item-h2(if='{opts.content.title}' content='{opts.content.title}')
+    div.f.fc
+      div.wrap-lists.f.flex-column
+        item-use-case-list(each='{item in opts.content.items}' content='{item}')
+
 
   style(scoped, type='less').
     @import "public/stylesheets/main.less";
@@ -16,13 +17,8 @@ module-why-points.py40
         width: 90%;
         max-width: 1048px;
         margin: 0 auto;
-        .lead {
-          text-align: center;
-        }
       }     
     }
 
   script.
 
-    this.content = Contents.why_points;
-    

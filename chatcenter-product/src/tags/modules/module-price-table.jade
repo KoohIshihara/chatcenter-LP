@@ -8,7 +8,8 @@ module-price-table.py40
         tbody
           tr(each='{trs in opts.content.table.trs}')
             td(each='{td in trs}')
-              p(if='{td.text}') {td.text}
+              p(if='{td.text}').text {td.text}
+              p(if='{td.detail}').detail {td.detail}
               div.img.f.fh
                 img(if='{td.check}' src='./img/icon/check.svg')
 
@@ -18,7 +19,7 @@ module-price-table.py40
     :scope {
       display: block;
       width: 100%;
-      background: @secondaryBGC;
+      background: @primaryBGC;
       .wrap-module {
         width: 90%;
         max-width: 1048px;
@@ -33,7 +34,10 @@ module-price-table.py40
             tr {
               td {
                 text-align: center;
-                font-weight: lighter
+                font-weight: lighter;
+                .text {
+                  font-weight: bold;
+                }
               }
             }
           }
@@ -42,6 +46,7 @@ module-price-table.py40
             border: 0.5px solid rgba(0, 0, 0, 0.1);
             line-height: 1.5;
             padding: 6px;
+            word-break: break-word;
           }
         }
       }

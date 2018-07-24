@@ -1,0 +1,17 @@
+item-button-cta(if='{opts.content}')
+  div.wrap-item.py24
+    a(href='{opts.content.href}').px16.py12 {opts.content.label}
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      a {
+        display: block;
+        border-radius: 34px;
+        background: @accentC;
+        color: @whiteC;
+        letter-spacing: 1.2px;
+        cursor: pointer;
+      }
+    }

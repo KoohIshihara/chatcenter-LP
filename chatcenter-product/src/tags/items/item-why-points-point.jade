@@ -1,5 +1,5 @@
 item-why-points-point.px20.py32.mb12
-  div.wrap-item.f.flex-around
+  div.wrap-item.f.flex-wrap
     div.wrap-img.mr12.f.fh
       img(src='{opts.content.src}')
     div.wrap-text.f.fh
@@ -17,12 +17,13 @@ item-why-points-point.px20.py32.mb12
       background: @whiteC;
       .wrap-item {
         .wrap-img {
-          width: 300px;
+          width: 30%;
           img {
             width: 80%;
           }
         }
         .wrap-text {
+          width: 65%;
           .title {
             font-weight: bold;
           }
@@ -30,7 +31,7 @@ item-why-points-point.px20.py32.mb12
             line-height: 1.4;
           }
         }
-      }     
+      }
     }
 
   script.

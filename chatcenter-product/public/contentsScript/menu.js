@@ -19,16 +19,16 @@
 // Header
 var MenuContent = [
   {
-    label: 'TOP',
+    label: 'トップ',
     func: 'to-top',
   },
   {
-    label: 'SIGN UP',
+    label: 'はじめる',
     href: 'http://kooh.me/',
     target: 'brank',
   },
   {
-    label: 'CONTACT',
+    label: 'お問い合わせ',
     func: 'to-contact',
   },
 ];
@@ -41,53 +41,43 @@ var ChatcenterHrefForContact = 'https://chatcenter.ai/chat/ejqze';
 // Footer
 var FooterMenuContent = [
   {
-    label: 'label',
-    href: 'http://kooh.me',
+    label: 'サインアップ',
+    href: 'https://app.chatcenter.ai/sign-in',
     target: 'brank',
   },
   {
-    label: 'label',
-    href: 'http://kooh.me',
+    label: 'サインイン',
+    href: 'https://app.chatcenter.ai/sign-in',
     target: 'brank',
   },
   {
-    label: 'labellabellabel',
-    href: 'http://kooh.me',
+    label: '会社概要',
+    href: 'http://jp.about.appsocial.ly/',
     target: 'brank',
   },
   {
-    label: 'label',
-    href: 'http://kooh.me',
+    label: 'ブログ',
+    href: 'https://blog.chatcenter.io/',
     target: 'brank',
   },
   {
-    label: 'label',
-    href: 'http://kooh.me',
+    label: 'チーム',
+    href: 'http://jp.about.appsocial.ly/team.html',
     target: 'brank',
   },
   {
-    label: 'label',
-    href: 'http://kooh.me',
+    label: '採用',
+    href: 'https://www.wantedly.com/companies/chatcenter',
     target: 'brank',
   },
   {
-    label: 'label',
-    href: 'http://kooh.me',
+    label: '利用規約',
+    href: 'http://www.chatcenter.io/termsofservice/',
     target: 'brank',
   },
   {
-    label: 'label',
-    href: 'http://kooh.me',
-    target: 'brank',
-  },
-  {
-    label: 'label',
-    href: 'http://kooh.me',
-    target: 'brank',
-  },
-  {
-    label: 'label',
-    href: 'http://kooh.me',
+    label: 'プライバシー',
+    href: 'http://www.chatcenter.io/privacypolicy/',
     target: 'brank',
   },
 ];

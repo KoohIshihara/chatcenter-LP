@@ -2,6 +2,8 @@ module-why-points.py40
   div.wrap-module
     p.lead.mb24 {content.lead_text}
     item-why-points-point(each='{item in content.contents}' content='{item}')
+    div.wrap-button.f.fc
+      item-button-cta(content='{content.cta}')
 
   style(scoped, type='less').
     @import "public/stylesheets/main.less";

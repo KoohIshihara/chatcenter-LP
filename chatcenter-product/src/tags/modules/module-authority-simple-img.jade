@@ -1,0 +1,32 @@
+module-authority-simple-img.py40
+  div.wrap-module
+    item-h2(if='{opts.content.title}' content='{opts.content.title}')
+    div.wrap-img.f.flex-between.flex-wrap
+      a(each='{card in opts.content.cards}')
+        img(src='{card.src}')
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 100%;
+      background: @secondaryBGC;
+      .wrap-module {
+        width: 90%;
+        max-width: 1048px;
+        margin: 0 auto;
+        .wrap-img {
+          a {
+            width: 33%;
+          }
+          @media @media-mobile {
+            a {
+              width: 49%;
+            }
+          }
+        }
+      } 
+    }
+
+  script.
