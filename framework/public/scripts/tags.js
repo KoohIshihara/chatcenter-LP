@@ -40,6 +40,9 @@ riot.tag2('item-menu-icon-sp', '<div class="wrap-icon f fh flex-wrap"> <div clas
     });
 });
 
+riot.tag2('item-use-case-list', '<div class="wrap-item px8 py12"> <div class="wrap-img pr12"><img src="./img/icon/check.svg"></div> <div class="wrap-text"> <p class="title mb4">{opts.content.title}</p> <p class="text">{opts.content.text}</p> </div> </div>', 'item-use-case-list,[data-is="item-use-case-list"]{display:inline-block} item-use-case-list .wrap-item,[data-is="item-use-case-list"] .wrap-item{display:inline-flex} item-use-case-list .wrap-item .wrap-img img,[data-is="item-use-case-list"] .wrap-item .wrap-img img{width:24px} item-use-case-list .wrap-item .wrap-text,[data-is="item-use-case-list"] .wrap-item .wrap-text{width:100%} item-use-case-list .wrap-item .wrap-text .title,[data-is="item-use-case-list"] .wrap-item .wrap-text .title{font-weight:bold} item-use-case-list .wrap-item .wrap-text .text,[data-is="item-use-case-list"] .wrap-item .wrap-text .text{font-weight:lighter}', '', function(opts) {
+});
+
 riot.tag2('item-what-card', '<div class="wrap-item py30"> <div class="wrap-img mb20 f fh"><img riot-src="{opts.content.src}"></div> <div class="wrap-texts"> <p class="title mb12">{opts.content.title}</p> <p class="sentence">{opts.content.text}</p> </div> </div>', 'item-what-card,[data-is="item-what-card"]{display:block;width:30%;background:#ffffff} item-what-card .wrap-item,[data-is="item-what-card"] .wrap-item{width:100%;height:100%} item-what-card .wrap-item .wrap-img img,[data-is="item-what-card"] .wrap-item .wrap-img img{width:60%} item-what-card .wrap-item .wrap-texts,[data-is="item-what-card"] .wrap-item .wrap-texts{width:90%;margin:0 auto} item-what-card .wrap-item .wrap-texts .title,[data-is="item-what-card"] .wrap-item .wrap-texts .title{text-align:center;font-size:14px;color:#2a2a2a} item-what-card .wrap-item .wrap-texts .sentence,[data-is="item-what-card"] .wrap-item .wrap-texts .sentence{text-align:center;font-size:14px;color:#999999;font-weight:lighter;line-height:1.4}@media only screen and (max-width : 600px){ item-what-card,[data-is="item-what-card"]{width:100%;margin-bottom:14px}}', '', function(opts) {
 });
 
@@ -78,6 +81,9 @@ riot.tag2('module-price-table', '<div class="wrap-module"> <item-h2 if="{opts.co
     this.on('mount', function(){
 
     });
+});
+
+riot.tag2('module-use-case', '<div class="wrap-module"> <item-h2 if="{opts.content.title}" content="{opts.content.title}"></item-h2> <div class="f fc"> <div class="wrap-lists f flex-column"> <item-use-case-list each="{item in opts.content.items}" content="{item}"></item-use-case-list> </div> </div> </div>', 'module-use-case,[data-is="module-use-case"]{display:block;width:100%;background:#f2f2f2} module-use-case .wrap-module,[data-is="module-use-case"] .wrap-module{width:90%;max-width:1048px;margin:0 auto}', 'class="py40"', function(opts) {
 });
 
 riot.tag2('module-what', '<div class="wrap-module py40"> <item-h2 if="{opts.content.title}" content="{opts.content.title}"></item-h2> <div class="wrap-card f flex-between flex-wrap"> <item-what-card each="{item in opts.content.cards}" content="{item}"></item-what-card> </div> <div class="wrap-button f fc"> <item-button-cta content="{opts.content.cta}"></item-button-cta> </div> </div>', 'module-what,[data-is="module-what"]{display:block;width:100%;background:#e0e0e0} module-what .wrap-module,[data-is="module-what"] .wrap-module{width:90%;max-width:1048px;margin:0 auto}', '', function(opts) {
@@ -138,7 +144,7 @@ riot.tag2('page-test', '<div class="wrap-page"></div> <h2>test</h2>', 'page-test
     });
 });
 
-riot.tag2('page-top', '<div class="wrap-page"> <module-hiro content="{contents.hiro}"></module-hiro> <module-why-points content="{contents.why_points}"></module-why-points> <module-what content="{contents.what}"></module-what> <module-how content="{contents.how}"></module-how> <module-authority content="{contents.authority}"></module-authority> <module-article content="{contents.article}"></module-article> <module-price-table content="{contents.price}"></module-price-table> <footer></footer> </div> <float-action-button></float-action-button>', 'page-top .wrap-page,[data-is="page-top"] .wrap-page{display:block;width:100%;height:100%;background:#FFFFFF}', '', function(opts) {
+riot.tag2('page-top', '<div class="wrap-page"> <module-hiro content="{contents.hiro}"></module-hiro> <module-why-points content="{contents.why_points}"></module-why-points> <module-what content="{contents.what}"></module-what> <module-use-case content="{contents.use_case}"></module-use-case> <module-how content="{contents.how}"></module-how> <module-authority content="{contents.authority}"></module-authority> <module-article content="{contents.article}"></module-article> <module-price-table content="{contents.price}"></module-price-table> <footer></footer> </div> <float-action-button></float-action-button>', 'page-top .wrap-page,[data-is="page-top"] .wrap-page{display:block;width:100%;height:100%;background:#FFFFFF}', '', function(opts) {
     var self = this;
 
     this.contents = Contents;

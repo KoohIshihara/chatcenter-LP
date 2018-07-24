@@ -55,6 +55,36 @@ var Contents = {
     ],
   },
 
+  use_case: {
+    title: 'USE CASE',
+    items: [
+      {
+        title: 'The Time',
+        text: 'It is very convinient, when these conditions happens. This makes your life better.',
+      },
+      {
+        title: 'The Time',
+        text: 'It is very convinient, when these conditions happens. This makes your life better.',
+      },
+      {
+        title: 'The Time',
+        text: 'It is very convinient, when these conditions happens. This makes your life better.',
+      },
+      {
+        title: 'The Time',
+        text: 'It is very convinient, when these conditions happens. This makes your life better.',
+      },
+      {
+        title: 'The Time',
+        text: 'It is very convinient, when these conditions happens. This makes your life better.',
+      },
+      {
+        title: 'The Time',
+        text: 'It is very convinient, when these conditions happens. This makes your life better.',
+      },
+    ],
+  },
+
   how: {
     title: 'OUR TEAM',
     cards: [
