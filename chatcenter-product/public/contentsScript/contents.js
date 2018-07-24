@@ -1,7 +1,12 @@
 var Contents = {
 
   hiro: {
-
+    tag_line: '"ChatCenter Ai"をあなたのビジネスに導入しましょう。',
+    src: './img/logo/logo.png',
+    cta: {
+      label: '今すぐはじめる',
+      href: 'https://app.chatcenter.ai/',
+    },
   },
 
   why: {
@@ -17,17 +22,17 @@ var Contents = {
     lead_text: 'ChatCenter Aiは、企業とお客様のコミュニケーションを効率化+自動化するためのハイブリッドコミュニケーションプラットフォームです。',
     contents: [
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/bot.svg',
         title: 'AIと人間で効率的に作業分担 (more efficient)',
         text: '煩雑で繰り返し発生するメッセージの送信はAIに任せましょう。あなたが本当にフォーカスすべきなのは、AIによる対応に比べて人間のほうが得意な会話、人間にしかできない（AIにはできない例えば複雑な内容の）会話、そして、人間が（例えば法令上）しなければならない会話です。',
       },
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/light_buble.svg',
         title: 'AIが効率化+自動化をアドバイス (better)',
         text: 'AIがあなたの会話を観察しながら、あなたにアドバイスをします。一度でも（もしくは繰り返し同様の内容の）メッセージを手入力するとテンプレート化を、同じ種類の質問に繰り返し手動でテンプレートを選択していると自動化を、AIがあなたに提案します。',
       },
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/check.svg',
         title: '有人対応も超効率化 (easier)',
         text: '手動での送信が必要なメッセージも、ウィジェットが超効率化します。スケジュールの調整や、支払いの依頼、リアルタイムの位置情報の送信など、企業とお客様の間に繰り返し発生する様々なタイプの業務関連コミュニケーションを2秒で送信完了できます。',
       },
@@ -42,23 +47,23 @@ var Contents = {
     //title: 'FUNCTION',
     cards: [
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/quick_install.svg',
         text: 'あなたのChatCenter Aiは、サインアップ後0秒で開設できます。',
       },
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/tool.svg',
         text: 'Widgetで有人対応を超効率化できます。',
       },
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/auto.svg',
         text: 'Automation Rulesの編集でどんなAI人格も自由自在に編集できます。',
       },
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/suggestion.svg',
         text: 'Suggestionsが、あなたのコミュニケーション関連業務の効率化+自動化の専門アドバイスをします。',
       },
       {
-        src: './img/contents/what-image-sample.jpg',
+        src: './img/contents/icons/marge.svg',
         text: 'APIを用いた外部ツールや自社サーバとの連携も可能です。',
       },
     ],
@@ -110,22 +115,22 @@ var Contents = {
     title: 'メディア掲載履歴',
     cards: [
       {
-        src: './img/contents/why-image-sample.jpg',
+        src: './img/contents/logos/bbc.svg',
       },
       {
-        src: './img/contents/why-image-sample.jpg',
+        src: './img/contents/logos/forbes.svg',
       },
       {
-        src: './img/contents/why-image-sample.jpg',
+        src: './img/contents/logos/nhk.png',
       },
       {
-        src: './img/contents/why-image-sample.jpg',
+        src: './img/contents/logos/thenextweb.svg',
       },
       {
-        src: './img/contents/why-image-sample.jpg',
+        src: './img/contents/logos/techchrunch.svg',
       },
       {
-        src: './img/contents/why-image-sample.jpg',
+        src: './img/contents/logos/venturebeat.svg',
       },
     ],
   },
@@ -229,7 +234,7 @@ var Contents = {
   },
 
   price: {
-    title: 'PRICE',
+    title: '料金',
     lead: 'Please check the followings.',
     table: {
       thead: [

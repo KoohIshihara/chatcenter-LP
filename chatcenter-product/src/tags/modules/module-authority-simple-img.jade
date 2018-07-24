@@ -2,8 +2,8 @@ module-authority-simple-img.py40
   div.wrap-module
     item-h2(if='{opts.content.title}' content='{opts.content.title}')
     div.wrap-img.f.flex-between.flex-wrap
-      a(each='{card in opts.content.cards}')
-        img(src='{card.src}')
+      a(each='{card in opts.content.cards}').f.fh
+        img(src='{card.src}').m24
 
   style(scoped, type='less').
     @import "public/stylesheets/main.less";
@@ -19,6 +19,9 @@ module-authority-simple-img.py40
         .wrap-img {
           a {
             width: 33%;
+            img {
+              width: 80%;
+            }
           }
           @media @media-mobile {
             a {

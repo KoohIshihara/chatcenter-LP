@@ -1,5 +1,5 @@
 item-button-cta(if='{opts.content}')
-  div.wrap-item.py24
+  div.wrap-item.py24.f.fc
     a(href='{opts.content.href}').px16.py12 {opts.content.label}
 
   style(scoped, type='less').
@@ -7,7 +7,7 @@ item-button-cta(if='{opts.content}')
     @import "public/stylesheets/theme.less";
     :scope {
       a {
-        display: block;
+        display: inline-block;
         border-radius: 34px;
         background: @accentC;
         color: @whiteC;

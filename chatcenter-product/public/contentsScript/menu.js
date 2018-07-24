@@ -24,7 +24,7 @@ var MenuContent = [
   },
   {
     label: 'はじめる',
-    href: 'http://kooh.me/',
+    href: 'https://app.chatcenter.ai/sign-in',
     target: 'brank',
   },
   {
