@@ -1,0 +1,31 @@
+module-authority.py40
+  div.wrap-module
+    item-h2(if='{opts.content.title}' content='{opts.content.title}')
+    div.wrap-card.f.flex-between.flex-wrap
+      item-authority-card(each='{item in opts.content.cards}' content='{item}')
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 100%;
+      background: @secondaryBGC;
+      .wrap-module {
+        width: 90%;
+        max-width: 1048px;
+        margin: 0 auto;
+        .wrap-card {
+          width: 80%;
+          margin: 0 auto;            
+        }
+        @media @media-mobile {
+          .wrap-card {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+  script.
+

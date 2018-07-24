@@ -1,0 +1,36 @@
+page-chat
+  div.wrap-page.pt48
+    iframe(src='{src}')
+
+  style(scoped, type='less').
+    :scope {
+      .wrap-page {
+        display: block;
+        width: 100%;
+        height: 100%;
+        iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+      }
+    }
+
+  script.
+
+    var self = this;
+
+    this.on('mount', function(){
+      $('modal-content').addClass('show');
+      $('modal-content').scrollTop(0);
+
+      // 次の画面遷移時にフェードインを防止
+      riot.enableFadeIn = false;
+
+      $(document).on("custom:close", function() {
+        $('modal-content').removeClass('show');
+        self.unmount(true);
+      });
+    });
+
+    this.src = ChatcenterHrefForContact;

@@ -1,0 +1,30 @@
+float-action-button
+  a(href='#chat').f.fh
+    img(src='./img/icon/chat.svg')
+
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      position: fixed;
+      z-index: 10;
+      display: block;
+      width: 48px;
+      height: 48px;
+      right: 20px;
+      bottom: 20px;
+      border-radius: 50%;
+      background: @primaryC;
+      filter: drop-shadow(1px 1px 1px rgba(100,100,100,0.6));
+      a {
+        width: 100%;
+        height: 100%;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      } 
+    }
+
+  script.

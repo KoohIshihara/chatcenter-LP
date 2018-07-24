@@ -1,0 +1,43 @@
+module-why
+  div.wrap-module.py40
+    item-h2(if='{opts.content.title}' content='{opts.content.title}')
+    div.wrap-img.mb24.f.fh
+      img(src='{opts.content.src}')
+    div.wrap-text.f.fc
+      div
+        p(each='{item in opts.content.explanation}').mb8 {item}
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 100%;
+      background: @primaryBGC;
+      .wrap-module {
+        width: 90%;
+        max-width: 1048px;
+        margin: 0 auto;
+        .wrap-img {
+          img {
+            object-fit: cover;
+            width: 100%;
+            max-width: 640px;
+          }
+        }
+        .wrap-text {
+          div {
+            display: inline-block;
+            max-width: 640px;
+            p {
+              color: @blackC;
+              font-weight: lighter;
+              line-height: 1.4;
+            }
+          }
+        }
+      }     
+    }
+
+  script.
+

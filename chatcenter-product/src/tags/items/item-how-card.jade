@@ -1,0 +1,50 @@
+item-how-card
+  div.wrap-item
+    div.wrap-img.mb20.f.fh
+      img(src='{opts.content.src}')
+    div.wrap-texts
+      p.title.mb12 {opts.content.title}
+      p.sentence {opts.content.text}
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 30%;
+      .wrap-item {
+        width: 100%;
+        height: 100%;
+        .wrap-img {
+          img {
+            width: 40%;
+            border-radius: 50%;
+          }
+        }
+        .wrap-texts {
+          width: 90%;
+          margin: 0 auto;
+          .title {
+            text-align: center;
+            font-size: 14px;
+            color: @blackC;
+          }
+          .sentence {
+            text-align: center;
+            font-size: 14px; 
+            color: @grayC;
+            font-weight: lighter;
+            line-height: 1.4;
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+      @media @media-mobile {
+        width: 100%;
+        margin-bottom: 14px;
+      }
+    }
+
+  script.
+

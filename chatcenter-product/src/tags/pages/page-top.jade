@@ -1,0 +1,34 @@
+page-top
+  div.wrap-page
+    module-hiro(content='{contents.hiro}')
+    //module-why(content='{contents.why}')
+    module-why-points(content='{contents.why_points}')
+    module-what(content='{contents.what}')
+    module-how(content='{contents.how}')
+    module-authority(content='{contents.authority}')
+    module-article(content='{contents.article}')
+    module-price-table(content='{contents.price}')
+    footer
+  float-action-button
+
+  style(scoped, type='less').
+    :scope {
+      .wrap-page {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF;
+      }
+    }
+
+  script.
+
+    var self = this;
+
+    this.contents = Contents;
+    console.log(this.contents)
+    this.on('mount', function(){
+
+      
+    });
+    

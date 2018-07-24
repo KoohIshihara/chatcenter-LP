@@ -1,0 +1,82 @@
+header
+  div.wrap-header.f.flex-between
+    a(href='./').wrap-logo.f.fm
+      p TITLE LOGO
+      //img(src='{logoSrc}' alt='LOGO')
+    div.wrap-menu-pc.s-hide.f.flex-between.fm
+      a(each='{item in contents}' href='{item.href}' target='{item.target}' class='{item.func}').item.ml16 {item.label}
+    div.wrap-icon-sp.s-show
+      div.overlay-sp
+      item-menu-icon-sp
+      menu-sp
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      position: fixed;
+      z-index: 100;
+      display: block;
+      width: 100%;
+      height: 48px;
+      top: 0;
+      background: @primaryC;
+      .wrap-header {
+        width: 90%;
+        height: 100%;
+        max-width: 1048px;
+        margin: 0 auto;
+        .wrap-logo {
+          cursor: pointer;
+          p {
+            color: @whiteC;
+            letter-spacing: 1.4px;
+            font-weight: normal;
+          }
+        }
+        .wrap-menu-pc {
+          .item {
+            letter-spacing: 1.4px;
+            color: @whiteC;
+            font-weight: lighter;
+            cursor: pointer;
+          }
+        }
+        .overlay-sp {
+          display: none;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.4);
+          cursor: pointer;
+          z-index: 90;
+        }
+      }
+    }
+
+  script.
+
+    this.contents = MenuContent;
+
+    this.logoSrc = MenuLogo;
+
+    this.on('mount', function(){
+  
+      // for funcs      
+      $('.to-top').click(function() {
+        if(window.location.href.match('chat')!=null){
+          $(document).trigger("custom:close");
+          window.location.href='./'
+        }else{
+          $("content").animate({scrollTop:0}, 800, 'easeOutCubic');
+        }
+      });
+
+      $('.to-contact').click(function() {
+        window.location.href = '#/chat';
+      });
+
+    });
+    

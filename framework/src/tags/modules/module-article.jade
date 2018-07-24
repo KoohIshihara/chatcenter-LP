@@ -1,0 +1,34 @@
+module-article.py40
+  div.wrap-module
+    item-h2(if='{opts.content.title}' content='{opts.content.title}')
+    div.wrap-card.f.flex-between.flex-wrap
+      item-article-card(each='{item in opts.content.cards}' content='{item}')
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 100%;
+      background: @primaryBGC;
+      .wrap-module {
+        width: 90%;
+        max-width: 1048px;
+        margin: 0 auto;
+        .wrap-card {
+          width: 80%;
+          margin: 0 auto;            
+        }
+      }
+    }
+
+  script.
+
+    this.on('mount', function(){
+      var cardNum = $('item-article-card').length;
+      if(cardNum > 2){
+        for(var i=0; i<cardNum; i++){
+          $('item-article-card')[i].classList.add('mb32');
+        }
+      }
+    });

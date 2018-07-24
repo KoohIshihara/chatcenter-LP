@@ -1,0 +1,38 @@
+item-article-card
+  a(href='{opts.content.href}' target='brank').wrap-item
+    div.wrap-img.f.fh
+      img(src='{opts.content.src}')
+    div.wrap-texts.py8.pl8
+      p.title.mb4 {opts.content.title}
+      p.date {opts.content.date}
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 48%;
+      background: @whiteC;
+      .wrap-item {
+        width: 100%;
+        .wrap-img {
+          /*height: 200px;*/
+          overflow: hidden;
+        }
+        .wrap-texts {
+          .title {
+
+          }
+          .date {
+            font-weight: lighter;
+            color: @grayC;
+          }
+        }
+      }
+      @media @media-mobile {
+        width: 100%;
+        margin-bottom: 14px;
+      }
+    }
+
+  script.

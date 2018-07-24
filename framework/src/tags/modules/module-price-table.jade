@@ -1,0 +1,54 @@
+module-price-table.py40
+  div.wrap-module
+    item-h2(if='{opts.content.title}' content='{opts.content.title}')
+    div.wrap-table
+      table
+        thead
+          th(each='{th in opts.content.table.thead}') {th}
+        tbody
+          tr(each='{trs in opts.content.table.trs}')
+            td(each='{td in trs}')
+              p(if='{td.text}') {td.text}
+              div.img.f.fh
+                img(if='{td.check}' src='./img/icon/check.svg')
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 100%;
+      background: @secondaryBGC;
+      .wrap-module {
+        width: 90%;
+        max-width: 1048px;
+        margin: 0 auto;
+        .wrap-table {
+          margin: 0 auto;  
+          table {
+            width: 100%;
+            background: @whiteC;
+            border-radius: 3px;
+            overflow: hidden;
+            tr {
+              td {
+                text-align: center;
+                font-weight: lighter
+              }
+            }
+          }
+          table, th, td {
+            border-collapse: collapse;
+            border: 0.5px solid rgba(0, 0, 0, 0.1);
+            line-height: 1.5;
+            padding: 6px;
+          }
+        }
+      }
+    }
+
+  script.
+
+    this.on('mount', function(){
+      
+    });

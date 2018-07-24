@@ -1,0 +1,31 @@
+module-how.py40
+  div.wrap-module.f.flex-between.flex-wrap
+    item-h2(if='{opts.content.title}' content='{opts.content.title}')
+    div.wrap-card.f.flex-between.flex-wrap  
+      item-how-card(each='{item in opts.content.cards}' content='{item}')
+
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 100%;
+      background: @primaryBGC;
+      .wrap-module {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 1048px;
+      }     
+    }
+
+  script.
+
+    this.on('mount', function(){
+      var cardNum = $('item-how-card').length;
+      if(cardNum > 3){
+        for(var i=0; i<cardNum; i++){
+          $('item-how-card')[i].classList.add('mb40');
+        }
+      }
+    });

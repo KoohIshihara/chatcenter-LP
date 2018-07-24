@@ -1,0 +1,42 @@
+item-authority-card.mb24
+  div.wrap-item.px18.py12
+    div.wrap-name.pb12.f.fm
+      div.wrap-img.mr16.f.fh
+        img(src='{opts.content.src}')
+      p {opts.content.name}
+    div.wrap-text.pt12
+      p {opts.content.text}
+
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      display: block;
+      width: 48%;
+      background: @whiteC;
+      border-radius: 3px;
+      @media @media-mobile {
+        width: 100%;
+      }
+      .wrap-item {
+        .wrap-name {
+          border-bottom: solid 0.8px rgba(155,155,155, 0.4);
+          .wrap-img {
+            width: 48px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .wrap-text {
+          p {
+            font-weight: lighter; 
+            line-height: 1.4;
+          }
+        }
+      }     
+    }
+
+  script.
+

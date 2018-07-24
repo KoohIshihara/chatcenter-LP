@@ -1,0 +1,63 @@
+menu-sp
+  div.wrap-menu-sp
+    div.menu.mt50
+      a(each='{item in contents}' href='{item.href}' target='{item.target}' class='{item.func}' onclick='{closeSpMenu}').item.mb16.px24 {item.label}
+
+
+
+  style(scoped, type='less').
+    @import "public/stylesheets/main.less";
+    @import "public/stylesheets/theme.less";
+    :scope {
+      position: fixed;
+      z-index: 91;
+      display: block;
+      width: 200px;
+      height: 100%;
+      right: -200px;
+      top: 0;
+      background: @primaryC;
+      transition-property: all;
+      transition-duration: 400ms;
+      transition-delay: 0s;
+      transition-timing-function: ease;
+      &.active {
+        right: 0px !important;
+      }
+      .wrap-menu-sp {
+        .menu {
+          a {
+            display: block;
+            color: @whiteC;
+            letter-spacing: 1.4px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+
+  script.
+
+    this.contents = MenuContent;
+
+    this.closeSpMenu = function(e) {
+      $('.a').toggleClass('a-active');
+      $('.b').toggleClass('b-active'); 
+      $('.c').toggleClass('c-active');
+      
+      $('menu-sp').toggleClass('active');
+      $('.overlay-sp').fadeToggle(400);
+    }
+
+    this.on('mount', function(){
+
+      /*
+      // for funcs      
+      $('.to-top').click(function() {
+        $('.overlay-sp').fadeToggle(400);
+        $("content").animate({scrollTop:0}, 800, 'easeOutCubic');
+      });
+      */
+
+    });
+
