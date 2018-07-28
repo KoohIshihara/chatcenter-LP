@@ -2,7 +2,7 @@ var TO_SCROLL = {
   toScroll: function(query) {
     var offset = $(query).offset();
     var d = new $.Deferred();
-    var p = $('html,body');
+    var p = $('html,body,content');
     if(!(p.is(':animated'))){ // アニメーションしていなければ
       p.animate({scrollTop: offset.top}, 800, 'easeOutCubic', function() {
         d.resolve();

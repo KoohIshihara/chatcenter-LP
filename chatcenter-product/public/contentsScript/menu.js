@@ -24,8 +24,13 @@ var MenuContent = [
   },
   {
     label: 'はじめる',
-    href: 'https://app.chatcenter.ai/sign-in',
-    target: 'brank',
+    func: 'to-signup',
+    //href: 'https://app.chatcenter.ai/sign-in',
+    //target: 'brank',
+  },
+  {
+    label: '料金',
+    func: 'to-price-table',
   },
   {
     label: 'お問い合わせ',
@@ -35,6 +40,7 @@ var MenuContent = [
 
 var MenuLogo = './img/logo/logo.svg';
 
+// Chat Page (Contact)
 var ChatcenterHrefForContact = 'https://chatcenter.ai/chat/ejqze';
 
 

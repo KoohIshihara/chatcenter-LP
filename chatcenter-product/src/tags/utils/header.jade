@@ -68,9 +68,24 @@ header
       $('.to-top').click(function() {
         if(window.location.href.match('chat')!=null){
           $(document).trigger("custom:close");
-          window.location.href='./'
+          window.history.back(-1);
+          TO_SCROLL.toScroll('module-hiro');
         }else{
-          $("content").animate({scrollTop:0}, 800, 'easeOutCubic');
+          TO_SCROLL.toScroll('module-hiro');
+        }
+      });
+
+      $('.to-signup').click(function() {
+        window.open('https://app.chatcenter.ai/sign-in');
+      });
+
+      $('.to-price-table').click(function() {
+        if(window.location.href.match('chat')!=null){
+          $(document).trigger("custom:close");
+          window.history.back(-1);
+          TO_SCROLL.toScroll('module-price-table');
+        }else{
+          TO_SCROLL.toScroll('module-price-table');
         }
       });
 

@@ -60,13 +60,13 @@ riot.tag2('module-article', '<div class="wrap-module"> <item-h2 if="{opts.conten
     });
 });
 
-riot.tag2('module-authority-simple-img', '<div class="wrap-module"> <item-h2 if="{opts.content.title}" content="{opts.content.title}"></item-h2> <div class="wrap-img f flex-between flex-wrap"><a class="f fh" each="{card in opts.content.cards}"><img class="m24" riot-src="{card.src}"></a></div> </div>', 'module-authority-simple-img,[data-is="module-authority-simple-img"]{display:block;width:100%;background:#e0e0e0} module-authority-simple-img .wrap-module,[data-is="module-authority-simple-img"] .wrap-module{width:90%;max-width:1048px;margin:0 auto} module-authority-simple-img .wrap-module .wrap-img a,[data-is="module-authority-simple-img"] .wrap-module .wrap-img a{width:33%} module-authority-simple-img .wrap-module .wrap-img a img,[data-is="module-authority-simple-img"] .wrap-module .wrap-img a img{width:80%}@media only screen and (max-width : 600px){ module-authority-simple-img .wrap-module .wrap-img a,[data-is="module-authority-simple-img"] .wrap-module .wrap-img a{width:49%}}', 'class="py40"', function(opts) {
+riot.tag2('module-authority-simple-img', '<div class="wrap-module"> <item-h2 if="{opts.content.title}" content="{opts.content.title}"></item-h2> <div class="wrap-img f flex-between flex-wrap"><a class="f fh" each="{card in opts.content.cards}"><img class="m24" riot-src="{card.src}"></a></div> </div>', 'module-authority-simple-img,[data-is="module-authority-simple-img"]{display:block;width:100%;background:#e0e0e0} module-authority-simple-img .wrap-module,[data-is="module-authority-simple-img"] .wrap-module{width:90%;max-width:1048px;margin:0 auto} module-authority-simple-img .wrap-module .wrap-img a,[data-is="module-authority-simple-img"] .wrap-module .wrap-img a{width:33%} module-authority-simple-img .wrap-module .wrap-img a img,[data-is="module-authority-simple-img"] .wrap-module .wrap-img a img{width:80%;filter:grayscale(1);opacity:.8}@media only screen and (max-width : 600px){ module-authority-simple-img .wrap-module .wrap-img a,[data-is="module-authority-simple-img"] .wrap-module .wrap-img a{width:49%}}', 'class="py40"', function(opts) {
 });
 
 riot.tag2('module-authority', '<div class="wrap-module"> <item-h2 if="{opts.content.title}" content="{opts.content.title}"></item-h2> <div class="wrap-card f flex-between flex-wrap"> <item-authority-card each="{item in opts.content.cards}" content="{item}"></item-authority-card> </div> </div>', 'module-authority,[data-is="module-authority"]{display:block;width:100%;background:#e0e0e0} module-authority .wrap-module,[data-is="module-authority"] .wrap-module{width:90%;max-width:1048px;margin:0 auto} module-authority .wrap-module .wrap-card,[data-is="module-authority"] .wrap-module .wrap-card{width:80%;margin:0 auto}@media only screen and (max-width : 600px){ module-authority .wrap-module .wrap-card,[data-is="module-authority"] .wrap-module .wrap-card{width:90%}}', 'class="py40"', function(opts) {
 });
 
-riot.tag2('module-hiro', '<div class="wrap-module f fh"> <div> <div class="wrap-img f fh" if="{opts.content.src}"><img riot-src="{opts.content.src}"></div> <p class="mb50">{opts.content.tag_line}</p> <item-button-cta content="{opts.content.cta}"></item-button-cta> </div> </div>', 'module-hiro,[data-is="module-hiro"]{display:block;width:100%;height:80vh;background:#ffffff} module-hiro .wrap-module,[data-is="module-hiro"] .wrap-module{height:100%} module-hiro .wrap-module div p,[data-is="module-hiro"] .wrap-module div p{color:#2a2a2a;letter-spacing:1.2px} module-hiro .wrap-module div .wrap-img img,[data-is="module-hiro"] .wrap-module div .wrap-img img{width:160px}', '', function(opts) {
+riot.tag2('module-hiro', '<div class="wrap-module f fh"> <div class="wrap-hiro-content"> <div class="wrap-img f fh" if="{opts.content.src}"><img riot-src="{opts.content.src}"></div> <p class="mb50">{opts.content.tag_line}</p> <item-button-cta content="{opts.content.cta}"></item-button-cta> </div> </div>', 'module-hiro,[data-is="module-hiro"]{display:block;width:100%;height:80vh;background:#ffffff} module-hiro .wrap-module,[data-is="module-hiro"] .wrap-module{height:100%} module-hiro .wrap-module .wrap-hiro-content,[data-is="module-hiro"] .wrap-module .wrap-hiro-content{width:80%} module-hiro .wrap-module .wrap-hiro-content p,[data-is="module-hiro"] .wrap-module .wrap-hiro-content p{color:#2a2a2a;letter-spacing:1.2px;text-align:center} module-hiro .wrap-module .wrap-hiro-content .wrap-img img,[data-is="module-hiro"] .wrap-module .wrap-hiro-content .wrap-img img{width:160px}', '', function(opts) {
 });
 
 riot.tag2('module-how', '<div class="wrap-module f flex-between flex-wrap"> <item-h2 if="{opts.content.title}" content="{opts.content.title}"></item-h2> <div class="wrap-card f flex-between flex-wrap"> <item-how-card each="{item in opts.content.cards}" content="{item}"></item-how-card> </div> </div>', 'module-how,[data-is="module-how"]{display:block;width:100%;background:#f2f2f2} module-how .wrap-module,[data-is="module-how"] .wrap-module{margin:0 auto;width:90%;max-width:1048px}', 'class="py40"', function(opts) {
@@ -182,9 +182,24 @@ riot.tag2('header', '<div class="wrap-header f flex-between"><a class="wrap-logo
       $('.to-top').click(function() {
         if(window.location.href.match('chat')!=null){
           $(document).trigger("custom:close");
-          window.location.href='./'
+          window.history.back(-1);
+          TO_SCROLL.toScroll('module-hiro');
         }else{
-          $("content").animate({scrollTop:0}, 800, 'easeOutCubic');
+          TO_SCROLL.toScroll('module-hiro');
+        }
+      });
+
+      $('.to-signup').click(function() {
+        window.open('https://app.chatcenter.ai/sign-in');
+      });
+
+      $('.to-price-table').click(function() {
+        if(window.location.href.match('chat')!=null){
+          $(document).trigger("custom:close");
+          window.history.back(-1);
+          TO_SCROLL.toScroll('module-price-table');
+        }else{
+          TO_SCROLL.toScroll('module-price-table');
         }
       });
 

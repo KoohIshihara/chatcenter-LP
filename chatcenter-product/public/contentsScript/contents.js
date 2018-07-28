@@ -22,7 +22,7 @@ var Contents = {
     lead_text: 'ChatCenter Aiは、企業とお客様のコミュニケーションを効率化+自動化するためのハイブリッドコミュニケーションプラットフォームです。',
     contents: [
       {
-        src: './img/contents/icons/bot.svg',
+        src: './img/contents/icons/bubles.svg',
         title: 'AIと人間で効率的に作業分担 (more efficient)',
         text: '煩雑で繰り返し発生するメッセージの送信はAIに任せましょう。あなたが本当にフォーカスすべきなのは、AIによる対応に比べて人間のほうが得意な会話、人間にしかできない（AIにはできない例えば複雑な内容の）会話、そして、人間が（例えば法令上）しなければならない会話です。',
       },
